@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Photo Gallery</title>
+    <style>
+      body {
+        background: #2f2f2f;
+      }
+
+      * { box-sizing: border-box; }
+
+      header {
+        transform: skew(0deg, 15deg);
+        color: #ffd3a1;
+        text-shadow: 1px 1px 10px #000;
+      }
+
+      .title {
+        font-family: sans-serif;
+        font-size: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 5rem auto;
+        animation: 250ms enter-title ease-out;
+      }
+
+      .title::before {
+        content: '[';
+        font-size: 15rem;
+        font-weight: 300;
+        position: absolute;
+        margin-left: -15rem;
+        margin-top: -1rem;
+        animation: 500ms enter-left-bracket ease-out;
+      }
+
+      .title::after {
+        content: ']';
+        font-size: 10rem;
+        font-weight: 300;
+        position: absolute;
+        margin-right: -28rem;
+        margin-top: 3rem;
+        animation: 500ms enter-right-bracket ease-out;
+      }
+
+      .subtitle {
+        opacity: 0.4;
+        font-weight: 100;
+        padding-left: 10rem;
+      }
+
+      .gallery {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .gallery li {
+        padding: 1rem;
+        animation: 350ms enter-photo ease-out forwards;
+        animation-delay: 1s;
+        opacity: 0;
+      }
+      
+      .gallery li:nth-child(2) {
+        animation-delay: 1.2s;
+      }
+      .gallery li:nth-child(3) {
+        animation-delay: 1.4s;
+      }
+      .gallery li:nth-child(4) {
+        animation-delay: 1.6s;
+      }
+      .gallery li:nth-child(5) {
+        animation-delay: 1.8s;
+      }
+      .gallery li:nth-child(6) {
+        animation-delay: 2s;
+      }
+      .gallery li:nth-child(7) {
+        animation-delay: 2.2s;
+      }
+      .gallery li:nth-child(8) {
+        animation-delay: 2.4s;
+      }
+      .gallery li:nth-child(9) {
+        animation-delay: 2.6s;
+      }
+      .gallery li:nth-child(10) {
+        animation-delay: 2.8s;
+      }
+      .gallery li:nth-child(11) {
+        animation-delay: 3s;
+      }
+      .gallery li:nth-child(12) {
+        animation-delay: 3.2s;
+      }
+
+      .gallery li img {
+        width: 10rem;
+        box-shadow: 1px 1px 30px #fff;
+        transition: all 300ms linear;
+        transform: skew(0deg, 15deg);
+      }
+
+      .gallery li:hover, .gallery li:focus {
+        z-index: 10;
+        outline: none;
+      }
+
+      .gallery li:hover img,
+      .gallery li:focus img {
+        box-shadow: 1px 1px 30px #000;
+        transform: scale(3);
+      }
+      
+      @keyframes enter-left-bracket {
+        0% {
+          transform: translateX(-100px);
+          color: #fff;
+        }
+        100% {
+          transform: translateX(0);
+          color: #000;
+        }
+      }
+
+      @keyframes enter-right-bracket {
+        0% {
+          transform: translateX(100px);
+          color: #fff;
+        }
+        100% {
+          transform: translateX(0);
+          color: #000;
+        }
+      }
+
+      @keyframes enter-title {
+        0% {
+          transform: scale(3);
+          color: #fff;
+        }
+        100% {
+          transform: scale(1);
+          color: #000;
+        }
+      }
+
+      @keyframes enter-photo {
+        0% {
+          transform: scale(1) translateX(-50px) translateY(50px);
+          opacity: 0;
+          box-shadow: none;
+        }
+
+        100% {
+          transform: scale(1) translateX(0) translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+    <h1 class="title">photo<span class="subtitle">gallery</span></h1>
+    </header>
+    <ul class="gallery">
+      <li tabindex="1"><img src="fotos/01.jpg" alt="Gatito durmiendo"></li>
+      <li tabindex="2"><img src="fotos/02.jpg" alt="Pizza servida en tabla de madera junto a un menú de restaurante, con porción de pizza separada en un plato"></li>
+      <li tabindex="3"><img src="fotos/03.jpg" alt="Mujer con joyas sosteniendo una taza de café con latte art en sus manos"></li>
+      <li tabindex="4"><img src="fotos/04.jpg" alt="Árbol sobre un monte, durante el atardecer"></li>
+      <li tabindex="5"><img src="fotos/05.jpg" alt="Cielo de atardecer"></li>
+      <li tabindex="6"><img src="fotos/06.jpg" alt="Perro recostado sobre una alfombra de piel"></li>
+      <li tabindex="7"><img src="fotos/07.jpg" alt="Porción de torta de chocolate con una frutilla"></li>
+      <li tabindex="8"><img src="fotos/08.jpg" alt="Persona sosteniendo en sus manos una figura plegada de papel con los colores de la bandera del orgullo LGBTIQ"></li>
+      <li tabindex="9"><img src="fotos/09.jpg" alt="Colibrí acercándose a una flor"></li>
+      <li tabindex="10"><img src="fotos/10.jpg" alt="Juguete de Wall-e"></li>
+      <li tabindex="11"><img src="fotos/11.jpg" alt="Ensalada de frutas servida sobre tabla"></li>
+      <li tabindex="12"><img src="fotos/12.jpg" alt="Mano extendida hacia el cielo del anochecer, con luna en cuarto menguante y sol de atardecer"></li>
+    </ul>
+  </body>
+</html>
